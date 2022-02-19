@@ -1,6 +1,15 @@
+type Greet {
+  greet: String!
+}
+
 type Note {
   id: ID!
   content: String!
+}
+
+type Post {
+  id: ID!
+  body: String!
 }
 
 input NoteInput {
@@ -13,13 +22,33 @@ input UpdateNoteInput {
   content: String
 }
 
+
+input PostInput {
+  id: ID!
+  body: String!
+}
+
+input UpdatePostInput {
+  id: ID!
+  body: String
+}
+
 type Query {
+  getGreet: Greet
   listNotes: [Note]
   getNoteById(noteId: String!): Note
+  getPost: Post
 }
 
 type Mutation {
   createNote(note: NoteInput!): Note
   deleteNote(noteId: String!): String
   updateNote(note: UpdateNoteInput!): Note
+  createPost(post: PostInput!): Post
+  updatePost(post: UpdatePostInput!): Post
+}
+
+type Subscription {
+  onCreateNote: Note
+  @aws_subscribe(mutations: ["createNote"])
 }

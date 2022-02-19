@@ -8,6 +8,7 @@ export default async function listNotes(): Promise<Record<string, unknown>[] | u
   };
 
   const data = await dynamoDb.scan(params).promise();
+  console.log(data);
 
   return data.Items;
 }

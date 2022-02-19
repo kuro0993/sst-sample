@@ -11,5 +11,5 @@ export default async function createNote(note: Note): Promise<Note> {
   
   await dynamoDb.put(params).promise();
 
-  return note;
+  return note as Note;
 }
