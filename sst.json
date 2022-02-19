@@ -1,5 +1,7 @@
 {
   "name": "sst-sample",
-  "region": "us-east-1",
+  "region": "ap-northeast-1",
+  "lint": true,
+  "typeCheck": true,
   "main": "stacks/index.ts"
 }
