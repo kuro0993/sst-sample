@@ -14,6 +14,11 @@
       "serverless-stack"
     ]
   },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/aws-lambda": "^8.10.70",
+    "@types/node": "<15.0.0"
+  },
   "dependencies": {
     "@serverless-stack/cli": "0.65.4",
     "@serverless-stack/resources": "0.65.4",
