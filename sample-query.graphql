@@ -1,0 +1,56 @@
+# Query
+query GetGreet {
+  getGreet {
+    greet
+  }
+}
+query GetNoteById {
+  getNoteById(noteId: "note1") {
+    content
+    id
+  }
+}
+query ListNotes {
+  listNotes {
+    content
+    id
+  }
+}
+query SearchNote {
+  searchNote(keyword: "a") {
+    content
+    id
+  }
+}
+query GetPost {
+  getPost(postId: "post1") {
+    body
+    id
+  }
+}
+# Create
+mutation CreateNote {
+  createNote(note: {id: "note1", content: "aaaaaa"}) {
+    content
+    id
+  }
+}
+mutation CreatePost {
+  createPost(post: {body: "AAAAA", id: "post1"}) {
+    id
+    body
+  }
+}
+# Update
+mutation UpdateNote {
+  updateNote(note: {id: "note1", content: "bbbbbbbbb"}) {
+    id
+    content
+  }
+}
+mutation UpdatePost {
+  updatePost(post: {id: "post1", body: "BBBBBBBBBB"}) {
+    id
+    body
+  }
+}

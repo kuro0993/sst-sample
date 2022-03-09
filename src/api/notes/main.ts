@@ -1,9 +1,10 @@
-import Note from 'Note';
+import Note from './Note';
 import listNotes from './listNotes';
 import createNote from './createNote';
 import updateNote from './updateNote';
 import deleteNote from './deleteNote';
 import getNoteById from './getNoteById';
+import searchNote from './searchNote';
 
 type AppSyncEvent = {
   info: {
@@ -12,6 +13,7 @@ type AppSyncEvent = {
   arguments: {
     note: Note;
     noteId: string;
+    keyword: string;
   },
 };
 
@@ -35,6 +37,9 @@ export async function handler(
     case 'getNoteById':
       console.log('call getNoteById');
       return await getNoteById(event.arguments.noteId);
+    case 'searchNote':
+      console.log('call searchNote');
+      return await searchNote(event.arguments.keyword);
     default:
       console.log('default');
       return null;

@@ -36,8 +36,9 @@ input UpdatePostInput {
 type Query {
   getGreet: Greet
   listNotes: [Note]
-  getNoteById(noteId: String!): Note
-  getPost: Post
+  getNoteById(noteId: ID!): Note
+  getPost(postId: ID!): Post
+  searchNote(keyword: String!): [Note]
 }
 
 type Mutation {
